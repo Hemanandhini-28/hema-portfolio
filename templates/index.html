@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Web</title>
+    <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="brand">My Portfolio</a>
+            <button class="nav-toggle" aria-label="Open navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="site-nav">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="container hero-copy">
+                <p class="eyebrow">Hi, I am</p>
+                <h1>Web Developer & Designer</h1>
+                <p>I build responsive portfolio websites using Flask, HTML, CSS, and JavaScript.</p>
+                <a href="#contact" class="btn btn-primary">Work With Me</a>
+            </div>
+            <div class="hero-image">
+                <div class="hero-card">
+                    <h2>Featured Skill</h2>
+                    <p>Responsive design, clean UI, and lightweight Python backend.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="about">
+            <div class="container section-grid">
+                <div>
+                    <h2>About Me</h2>
+                    <p>I'm a developer who creates polished web experiences with a focus on usability, performance, and clean code. My goal is to build portfolio sites that feel modern and professional.</p>
+                </div>
+                <div class="skill-list">
+                    <div class="skill-item">
+                        <h3>HTML</h3>
+                        <p>Structured layouts with semantic markup.</p>
+                    </div>
+                    <div class="skill-item">
+                        <h3>CSS</h3>
+                        <p>Responsive styling, flexbox, and animations.</p>
+                    </div>
+                    <div class="skill-item">
+                        <h3>JavaScript</h3>
+                        <p>Interactive behavior and smooth scrolling.</p>
+                    </div>
+                    <div class="skill-item">
+                        <h3>Flask</h3>
+                        <p>Simple backend routing and template rendering.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section bg-light" id="portfolio">
+            <div class="container">
+                <h2>Portfolio</h2>
+                <div class="projects-grid">
+                    {% for item in portfolio_items %}
+                    <article class="project-card">
+                        <h3>{{ item.title }}</h3>
+                        <p>{{ item.description }}</p>
+                        <a href="{{ item.link }}" class="project-link">View Project</a>
+                    </article>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="contact">
+            <div class="container contact-grid">
+                <div>
+                    <h2>Contact</h2>
+                    <p>Have a project idea or want to collaborate? Send a message and let's get started.</p>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your name" required />
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="you@example.com" required />
+
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Tell me about your project" required></textarea>
+
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                    <p class="form-response" id="formResponse"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2026 My Portfolio. Built with Flask.</p>
+        </div>
+    </footer>
+
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
