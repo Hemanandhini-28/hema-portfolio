@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hemanandhini Meganathan — AI & Data Science Portfolio</title>
+    <meta name="description" content="Portfolio of Hemanandhini Meganathan, an AI & Data Science student specializing in Power BI, SQL analytics, and machine learning." />
+    <meta property="og:title" content="Hemanandhini Meganathan — AI & Data Science Portfolio" />
+    <meta property="og:description" content="AI & Data Science student building dashboards, analytics, and machine-learning projects." />
+    <meta property="og:type" content="website" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  </head>
+  <body>
+    {% block content %}{% endblock %}
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  </body>
+</html>
